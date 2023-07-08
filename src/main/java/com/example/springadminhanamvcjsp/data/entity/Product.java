@@ -3,14 +3,20 @@ package com.example.springadminhanamvcjsp.data.entity;
 
 import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.sql.Timestamp;
 
+@Entity
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
+    @Id
+    @GeneratedValue
     private Long p_id;
     private String p_category;
     private String p_name;

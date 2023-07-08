@@ -2,8 +2,13 @@ package com.example.springadminhanamvcjsp.data.entity;
 
 import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import java.sql.Timestamp;
 
+@Entity
 @Getter
 @Setter
 @ToString
@@ -11,6 +16,8 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Builder
 public class Account {
+    @Id
+    @GeneratedValue
     private Long acc_id;
     private Long acc_cid;
     private Timestamp acc_date;
