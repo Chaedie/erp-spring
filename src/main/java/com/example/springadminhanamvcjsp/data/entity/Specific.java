@@ -9,7 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Specific {
-    private Integer c_id;
+    private Long c_id;
     private String spc_rank;
     private Integer spc_creditrank;
 }

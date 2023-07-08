@@ -11,8 +11,8 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Asset {
-    private Integer ass_id;
-    private Integer c_id;
+    private Long ass_id;
+    private Long c_id;
     private Integer ass_stock;
     private Integer ass_bond;
     private Integer ass_realestate;

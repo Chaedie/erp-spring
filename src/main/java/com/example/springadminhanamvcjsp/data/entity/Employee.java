@@ -9,7 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Employee {
-    private Integer e_id;
+    private Long e_id;
     private String e_password;
     private String e_name;
 }

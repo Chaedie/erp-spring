@@ -12,9 +12,9 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Builder
 public class Transaction {
-    private Integer t_id;
-    private Integer t_accid;
-    private Integer t_counterpart_id;
+    private Long t_id;
+    private Long t_accid;
+    private Long t_counterpart_id;
     private Character t_type;
     private Timestamp t_date;
     private Integer t_amount;

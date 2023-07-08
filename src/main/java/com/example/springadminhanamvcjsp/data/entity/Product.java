@@ -11,7 +11,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Product {
-    private Integer p_id;
+    private Long p_id;
     private String p_category;
     private String p_name;
     private String p_description;

@@ -9,7 +9,7 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class Customer {
-    private Integer c_id;
+    private Long c_id;
     private String c_name;
     private String c_rrn;
     private Character c_gender;
@@ -17,5 +17,5 @@ public class Customer {
     private String c_mobile;
     private String c_job;
     private String c_description;
-    private Integer e_id;
+    private Long e_id;
 }

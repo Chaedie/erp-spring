@@ -11,12 +11,12 @@ import java.sql.Timestamp;
 @AllArgsConstructor
 @Builder
 public class Account {
-    private Integer acc_id;
-    private Integer acc_cid;
+    private Long acc_id;
+    private Long acc_cid;
     private Timestamp acc_date;
     private Integer acc_balance;
     private String acc_password;
-    private Integer acc_pid;
+    private Long acc_pid;
     private String acc_p_category;
     private String acc_pname;
     private Double acc_interestrate;

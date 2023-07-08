@@ -11,8 +11,8 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 public class PaymentHistory {
-    private Integer pay_id;
-    private Integer c_id;
+    private Long pay_id;
+    private Long c_id;
     private Timestamp pay_date;
     private Integer pay_amount;
     private String pay_type;
