@@ -18,7 +18,7 @@
   if (tempList != null) {
     customerList = tempList;
   }
-  Integer customerCount = (Integer) request.getAttribute("customerCount");
+  Long customerCount = (Long) request.getAttribute("customerCount");
   String _page = request.getParameter("page");
   String size = request.getParameter("size");
   String orderBy = request.getParameter("orderBy");
@@ -97,21 +97,21 @@
                   for (int i = 0; i < customerList.size(); i++) {
                 %>
                 <tr data-index="<%=i%>">
-                  <td style="width: 2rem;"><%=customerList.get(i).getC_id()%>
+                  <td style="width: 2rem;"><%=customerList.get(i).getCId()%>
                   </td>
-                  <td style="width: 3rem;"><%=customerList.get(i).getC_name()%>
+                  <td style="width: 3rem;"><%=customerList.get(i).getCName()%>
                   </td>
-                  <td style="width: 5rem;"><%=customerList.get(i).getC_rrn()%>
+                  <td style="width: 5rem;"><%=customerList.get(i).getCRrn()%>
                   </td>
-                  <td style="width: 0.5rem;"><%=customerList.get(i).getC_gender() == 'M' ? "남자" : "여자"%>
+                  <td style="width: 0.5rem;"><%=customerList.get(i).getCGender() == 'M' ? "남자" : "여자"%>
                   </td>
-                  <td style="width: 10rem"><%=customerList.get(i).getC_address()%>
+                  <td style="width: 10rem"><%=customerList.get(i).getCAddress()%>
                   </td>
-                  <td style="width: 3rem;"><%=customerList.get(i).getC_mobile()%>
+                  <td style="width: 3rem;"><%=customerList.get(i).getCMobile()%>
                   </td>
-                  <td style="width: 3rem;"><%=customerList.get(i).getC_job()%>
+                  <td style="width: 3rem;"><%=customerList.get(i).getCJob()%>
                   </td>
-                  <td style="width: 3rem;"><%=customerList.get(i).getE_id()%>
+                  <td style="width: 3rem;"><%=customerList.get(i).getEId()%>
                   </td>
                     <%
                   }
