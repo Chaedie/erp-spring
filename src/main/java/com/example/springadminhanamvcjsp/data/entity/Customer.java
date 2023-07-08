@@ -2,6 +2,11 @@ package com.example.springadminhanamvcjsp.data.entity;
 
 import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+
+@Entity
 @Getter
 @Setter
 @ToString
@@ -9,6 +14,8 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 public class Customer {
+    @Id
+    @GeneratedValue
     private Long c_id;
     private String c_name;
     private String c_rrn;

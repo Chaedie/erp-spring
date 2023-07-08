@@ -3,15 +3,22 @@ package com.example.springadminhanamvcjsp.data.entity;
 
 import lombok.*;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import java.sql.Timestamp;
 
+@Entity
 @Getter
 @Setter
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
 public class Asset {
+    @Id
+    @GeneratedValue
     private Long ass_id;
+    
     private Long c_id;
     private Integer ass_stock;
     private Integer ass_bond;
