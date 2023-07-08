@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class AssetEntity {
+public class Asset {
     private Integer ass_id;
     private Integer c_id;
     private Integer ass_stock;

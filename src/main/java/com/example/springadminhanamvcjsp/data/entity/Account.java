@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class AccountEntity {
+public class Account {
     private Integer acc_id;
     private Integer acc_cid;
     private Timestamp acc_date;

@@ -8,8 +8,8 @@ import lombok.*;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class EmployeeEntity {
-    private Integer e_id;
-    private String e_password;
-    private String e_name;
+public class Specific {
+    private Integer c_id;
+    private String spc_rank;
+    private Integer spc_creditrank;
 }

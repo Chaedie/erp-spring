@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class PaymentHistoryEntity {
+public class PaymentHistory {
     private Integer pay_id;
     private Integer c_id;
     private Timestamp pay_date;

@@ -11,7 +11,7 @@ import java.sql.Timestamp;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class TransactionEntity {
+public class Transaction {
     private Integer t_id;
     private Integer t_accid;
     private Integer t_counterpart_id;

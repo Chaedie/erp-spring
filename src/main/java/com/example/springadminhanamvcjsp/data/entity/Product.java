@@ -10,7 +10,7 @@ import java.sql.Timestamp;
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductEntity {
+public class Product {
     private Integer p_id;
     private String p_category;
     private String p_name;
