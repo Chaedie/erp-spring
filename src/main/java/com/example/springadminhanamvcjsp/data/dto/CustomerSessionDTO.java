@@ -13,8 +13,8 @@ public class CustomerSessionDTO {
     private Long c_id;
 
     public CustomerSessionDTO(Customer customer) {
-        this.c_name = customer.getC_name();
-        this.c_id = customer.getC_id();
+        this.c_name = customer.getCName();
+        this.c_id = customer.getCId();
     }
 
     public static CustomerSessionDTO from(Customer customer) {

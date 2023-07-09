@@ -10,25 +10,25 @@ import lombok.*;
 @NoArgsConstructor
 @ToString
 public class CustomerResponseDTO {
-    private Long c_id;
-    private String c_name;
-    private String c_rrn;
-    private Character c_gender;
-    private String c_address;
-    private String c_mobile;
-    private String c_job;
-    private String c_description;
-    private Long e_id;
+    private Long cId;
+    private String cName;
+    private String cRrn;
+    private Character cGender;
+    private String cAddress;
+    private String cMobile;
+    private String cJob;
+    private String cDescription;
+    private Long eId;
     
     public CustomerResponseDTO(Customer customer) {
-        this.c_id = customer.getC_id();
-        this.c_name = customer.getC_name();
-        this.c_rrn = customer.getC_rrn();
-        this.c_gender = customer.getC_gender();
-        this.c_address = customer.getC_address();
-        this.c_mobile = customer.getC_mobile();
-        this.c_job = customer.getC_job();
-        this.c_description = customer.getC_description();
-        this.e_id = customer.getE_id();
+        this.cId = customer.getCId();
+        this.cName = customer.getCName();
+        this.cRrn = customer.getCRrn();
+        this.cGender = customer.getCGender();
+        this.cAddress = customer.getCAddress();
+        this.cMobile = customer.getCMobile();
+        this.cJob = customer.getCJob();
+        this.cDescription = customer.getCDescription();
+        this.eId = customer.getEId();
     }
 }
