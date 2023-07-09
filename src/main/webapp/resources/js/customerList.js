@@ -7,19 +7,19 @@ let innerHTML = "";
 
 innerHTML += `
       <li class="datatable-pagination-list-item">
-        <a href="?page=${page - 10 > 0 ? page - 10 : 1}&size=${size}"data-page="1" class="datatable-pagination-list-item-link">‹</a>
+        <a href="?page=${page - 10 > 0 ? page - 10 : 1}&size=${size}&search=${search}"data-page="1" class="datatable-pagination-list-item-link">‹</a>
       </li>`;
 
 for (let i = startPageIdx; i <= lastPageIdx; i++) {
   innerHTML += `
           <li class="datatable-pagination-list-item ${page == i ? "datatable-active" : ""} ">
-            <a href="?page=${i}&size=${size}" data-page="${i}" class="datatable-pagination-list-item-link">${i}</a>
+            <a href="?page=${i}&size=${size}&search=${search}" data-page="${i}" class="datatable-pagination-list-item-link">${i}</a>
           </li>
           `;
 }
 innerHTML += `
       <li class="datatable-pagination-list-item"  >
-        <a href="?page=${page + 10 < lastPage ? page + 10 : lastPage}&size=${size}" data-page="2" class="datatable-pagination-list-item-link">›</a>
+        <a href="?page=${page + 10 < lastPage ? page + 10 : lastPage}&size=${size}&search=${search}" data-page="2" class="datatable-pagination-list-item-link">›</a>
       </li>`;
 $pagenation.innerHTML = innerHTML;
 
