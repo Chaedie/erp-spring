@@ -6,9 +6,11 @@ import com.example.springadminhanamvcjsp.data.dto.PaginationDTO;
 import java.util.List;
 
 public interface CustomerListService {
-    List<CustomerResponseDTO> findAll(); 
+    List<CustomerResponseDTO> findAll();
 
     List<CustomerResponseDTO> findAllWithPagination(PaginationDTO paginationDTO);
 
     Long countTotal();
+
+    Long countTotalByCNameContains(PaginationDTO paginationDTO);
 }

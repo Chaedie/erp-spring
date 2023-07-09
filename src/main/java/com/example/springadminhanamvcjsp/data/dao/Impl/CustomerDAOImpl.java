@@ -66,4 +66,11 @@ public class CustomerDAOImpl implements CustomerDAO {
 
         return total;
     }
+
+    @Override
+    public Long countTotalByCNameContains(PaginationDTO paginationDTO) {
+        Long total = customerRepository.countCustomerByCNameContains(paginationDTO.getSearch());
+
+        return total;
+    }
 }

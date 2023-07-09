@@ -12,6 +12,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
+import static com.example.springadminhanamvcjsp.utils.PaginationUtils.getLastRow;
+import static com.example.springadminhanamvcjsp.utils.PaginationUtils.getStartRow;
+
 @Controller
 @RequestMapping("/customerList")
 public class CustomerListController {
@@ -28,13 +31,20 @@ public class CustomerListController {
                                   @RequestParam(value = "size", defaultValue = "10") String size,
                                   @RequestParam(value = "page", defaultValue = "1") String page,
                                   @RequestParam(value = "search", required = false) String search) {
-        List<CustomerResponseDTO> customerResponseDTOList = customerListService.findAllWithPagination(
-                new PaginationDTO().builder()
-                        .page(Integer.parseInt(page))
-                        .size(Integer.parseInt(size))
-                        .search(search)
-                        .build());
-        Long customerTotalCount = customerListService.countTotal();
+        search = search == null ? "%" : "%" + search + "%";
+        Integer pageSize = Integer.parseInt(size);
+        Integer pageNumber = Integer.parseInt(page);
+        Integer startRow = getStartRow(pageSize, pageNumber);
+        Integer lastRow = getLastRow(pageSize, startRow);
+        PaginationDTO paginationDTO = new PaginationDTO().builder()
+                .page(pageNumber)
+                .size(pageSize)
+                .search(search)
+                .startRow(startRow)
+                .lastRow(lastRow)
+                .build();
+        List<CustomerResponseDTO> customerResponseDTOList = customerListService.findAllWithPagination(paginationDTO);
+        Long customerTotalCount = customerListService.countTotalByCNameContains(paginationDTO);
 
         model.addAttribute("customerList", customerResponseDTOList);
         model.addAttribute("customerCount", customerTotalCount);
