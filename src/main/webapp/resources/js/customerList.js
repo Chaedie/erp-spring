@@ -11,7 +11,7 @@ innerHTML += `
       </li>`;
 
 for (let i = startPageIdx; i <= lastPageIdx; i++) {
-    innerHTML += `
+  innerHTML += `
           <li class="datatable-pagination-list-item ${page == i ? "datatable-active" : ""} ">
             <a href="?page=${i}&size=${size}" data-page="${i}" class="datatable-pagination-list-item-link">${i}</a>
           </li>
@@ -36,20 +36,20 @@ let selectorInnerHTML = `
 
 $sizeSelector.innerHTML = selectorInnerHTML;
 $sizeSelector.addEventListener('change', (e) => {
-    const value = e.target.value;
-    location.href = `customerList?page=${page}&size=${value}`;
+  const value = e.target.value;
+  location.href = `customerList?page=${page}&size=${value}`;
 });
 
 $searchForm = document.querySelector(".searchForm");
 $searchForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const value = e.target.searchInput.value;
-    location.href = `customerList?page=${page}&size=${size}&search=${value}`;
+  e.preventDefault();
+  const value = e.target.searchInput.value;
+  location.href = `customerList?page=1&size=10&search=${value}`;
 })
 
 const handleClickColumn = (column) => {
-    const newOrdering = ordering == "desc" ? "asc" : "desc";
-    location.href = `customerList?page=${page}&size=${size}&search=${search}&orderBy=${column}&ordering=${newOrdering}`;
+  const newOrdering = ordering == "desc" ? "asc" : "desc";
+  location.href = `customerList?page=${page}&size=${size}&search=${search}&orderBy=${column}&ordering=${newOrdering}`;
 }
 const $columnHead = document.querySelector("#columnHead");
 $columnHead.innerHTML = `
