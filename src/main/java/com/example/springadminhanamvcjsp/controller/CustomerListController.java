@@ -3,6 +3,7 @@ package com.example.springadminhanamvcjsp.controller;
 import com.example.springadminhanamvcjsp.data.dto.CustomerResponseDTO;
 import com.example.springadminhanamvcjsp.data.dto.PaginationDTO;
 import com.example.springadminhanamvcjsp.service.CustomerListService;
+import com.example.springadminhanamvcjsp.service.Impl.CustomerCountRedisService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +21,12 @@ import static com.example.springadminhanamvcjsp.utils.PaginationUtils.getStartRo
 public class CustomerListController {
 
     private final CustomerListService customerListService;
+    private final CustomerCountRedisService customerCountRedisService;
 
     @Autowired
-    public CustomerListController(CustomerListService customerListService) {
+    public CustomerListController(CustomerListService customerListService, CustomerCountRedisService customerCountRedisService) {
         this.customerListService = customerListService;
+        this.customerCountRedisService = customerCountRedisService;
     }
 
     @GetMapping()
@@ -44,7 +47,7 @@ public class CustomerListController {
                 .lastRow(lastRow)
                 .build();
         List<CustomerResponseDTO> customerResponseDTOList = customerListService.findAllWithPagination(paginationDTO);
-        Long customerTotalCount = customerListService.countTotalByCNameContains(paginationDTO);
+        Long customerTotalCount = customerCountRedisService.customerTotalCount(paginationDTO);
 
         model.addAttribute("customerList", customerResponseDTOList);
         model.addAttribute("customerCount", customerTotalCount);

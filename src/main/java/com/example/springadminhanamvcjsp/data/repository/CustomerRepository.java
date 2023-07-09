@@ -19,7 +19,7 @@ public interface CustomerRepository extends JpaRepository<Customer, Long> {
     List<Customer> findAllWithPagination(String search, Integer startRow, Integer lastRow);
 
     @Query(nativeQuery = true,
-            value = "select count(c_name) from customer where c_name like ?1")
+            value = "select count(*) from customer where c_name like ?1")
     Long countCustomerByCNameContains(String search);
 
 }
