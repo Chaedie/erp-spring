@@ -9,14 +9,13 @@ import java.util.List;
 public interface CustomerRepository extends JpaRepository<Customer, Long> {
 
     @Query(nativeQuery = true,
-            value =
-                    "select * from (" +
-                            "   select rownum as rownumber, " +
-                            "           ordered_customer.* from (" +
-                            "               select * from customer " +
-                            "               where c_name like ?1 " +
-                            "               order by c_id desc ) ordered_customer ) " +
-                            " where rownumber >= ?2 and rownumber < ?3")
+            value = "select * from (" +
+                    "   select rownum as rownumber, " +
+                    "           ordered_customer.* from (" +
+                    "               select * from customer " +
+                    "               where c_name like ?1 " +
+                    "               order by c_id desc ) ordered_customer ) " +
+                    " where rownumber >= ?2 and rownumber < ?3")
     List<Customer> findAllWithPagination(String search, Integer startRow, Integer lastRow);
 
     @Query(nativeQuery = true,
