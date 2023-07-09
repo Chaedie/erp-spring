@@ -37,7 +37,7 @@ let selectorInnerHTML = `
 $sizeSelector.innerHTML = selectorInnerHTML;
 $sizeSelector.addEventListener('change', (e) => {
   const value = e.target.value;
-  location.href = `customerList?page=${page}&size=${value}`;
+  location.href = `customerList?page=${page}&size=${value}&search=${search}`;
 });
 
 $searchForm = document.querySelector(".searchForm");
